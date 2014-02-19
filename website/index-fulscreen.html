@@ -1,0 +1,26 @@
+<html>
+<head>
+  <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.css" />
+  <script src="http://libs.cartocdn.com/cartodb.js/v3/cartodb.js"></script>
+	<style>
+	* { margin: 0px; padding: 0px; }
+	html, body, #cartodb-map { height: 100%; width: 100%; }
+	</style>
+	<script>
+    var map;
+    function init(){
+    	var layerUrl = 'http://kartones.cartodb.com/api/v2/viz/2fcd90ae-8a6d-11e3-9f2b-0edd25b1ac90/viz.json';
+      map = new L.Map('cartodb-map', { center: [49.89463439573419, 325.01953125], zoom: 3 });
+      cartodb.createLayer(map, layerUrl)
+					   .addTo(map)
+					   .on('done', function(layer) {
+					    }).on('error', function() {
+					    });
+    }
+  </script>
+  <title>Ex-Tuentis por el mundo</title>
+</head>
+<body onload="init()">
+  <div id='cartodb-map'></div>
+</body>
+</html>
